@@ -427,7 +427,7 @@ const HomeScreen = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#f4f4f8' }}>
-      <Text style={{ fontSize: 28, fontWeight: 'bold', marginTop: 32, marginLeft: 24, marginBottom: 8, color: '#18181b' }}>Inbox</Text>
+      <Text style={{ fontSize: 28, fontWeight: 'bold', marginTop: 8, marginLeft: 19, marginBottom: 8, color: '#18181b' }}>Inbox</Text>
       <View style={styles.searchBarContainer}>
         <Image
           source={require('../assets/icons/search.png')}

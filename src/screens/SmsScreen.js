@@ -7,6 +7,7 @@ import {
   Pressable,
   SafeAreaView,
   Alert,
+  Image
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import DatabaseHelper from '../database/DatabaseHelper';
@@ -113,7 +114,11 @@ const SmsScreen = () => {
           onPress={() => navigation.goBack()}
           style={styles.backButton}
         >
-          <Text style={styles.backButtonText}>←</Text>
+         <Image 
+         source={require('../assets/icons/back.png')}
+         style={styles.backIcon}
+         resizeMode="contain"
+         />
         </Pressable>
         <Text style={styles.headerTitle} numberOfLines={1}>
           {address}
@@ -198,6 +203,11 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 10,
     fontWeight: 'bold',
+  },
+  backIcon: {
+    width: 24,
+    height: 24,
+    tintColor: '#7C3AED',
   },
 });
 

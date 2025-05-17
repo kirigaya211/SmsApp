@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TextInput, FlatList, Pressable } from 'react-native';
+import { View, Text, StyleSheet, TextInput, FlatList, Pressable, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import DatabaseHelper from '../database/DatabaseHelper';
@@ -75,17 +75,20 @@ const SpamScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>SPAM Messages</Text>
-      <View style={styles.searchContainer}>
-        <View style={styles.searchBar}>
+      <Text style={styles.title}>Spam</Text>
+      <View style={styles.searchBarContainer}>
+      <Image
+          source={require('../assets/icons/search.png')}
+          style={styles.searchIcon}
+          resizeMode="contain"
+        />
           <TextInput
             style={styles.searchInput}
-            placeholder="Search SPAM messages..."
+            placeholder="Search "
             value={searchQuery}
             onChangeText={setSearchQuery}
             placeholderTextColor="#666"
           />
-        </View>
       </View>
       {loading ? (
         <Text style={styles.loadingText}>Loading messages...</Text>
@@ -111,29 +114,37 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    marginTop: 32,
-    marginLeft: 24,
+    marginTop: 8,
+    marginLeft: 19,
     marginBottom: 8,
     color: '#18181b',
   },
-  searchContainer: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    backgroundColor: '#fff',
-  },
-  searchBar: {
+  searchBarContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f4f4f8',
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    height: 48,
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    marginHorizontal: 16,
+    marginBottom: 18,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.07,
+    shadowRadius: 4,
+    elevation: 1,
   },
   searchInput: {
     flex: 1,
     fontSize: 16,
-    color: '#18181b',
-    paddingVertical: 8,
+    color: '#222',
+    paddingVertical: 0,
+  },
+  searchIcon: {
+    width: 22,
+    height: 22,
+    marginRight: 8,
+    tintColor: '#888',
   },
   list: {
     flex: 1,
