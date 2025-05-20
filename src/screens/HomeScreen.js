@@ -162,7 +162,7 @@ const HomeScreen = () => {
           // Fetch initial messages after database is initialized
           const filter = {
             box: 'inbox',
-            maxCount: 20,
+            maxCount: 50,
           };
 
           SmsAndroid.list(
